@@ -1,0 +1,37 @@
+<table class="table table-primary text-center bg-light mt-3 mb-3">
+ <tr>
+  <th colspan="6" class="h1 text text-danger">King Bach store ({{total}})</th>
+  <th>
+   <a href="/add" class="btn btn-success">Add</a>
+   <a href="/drop" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete All</a>
+  </th>
+ </tr>
+ <tr class="">
+  <th class="cot" style="color: green;">Tên</th>
+  <th class="cot">Thương hiệu</th>
+  <th class="cot">Màu sắc</th>
+  <th class="cot">Số lượng</th>
+  <th class="cot">Ảnh</th>
+  <th class="cot">Video</th>
+  <th class="cot">Options</th>
+ </tr>
+ {{#each mobiles }}
+  <tr>
+   <th>{{ name }}</th>
+   <th>{{ brand }}</th>
+   <th>{{ color }}</th>
+   <th>{{ quantity }}</th>
+   <th>
+    <img src="{{image}}" alt="" width="200" height="200" class="zoom">
+   </th>
+   <th>
+    <iframe src="https://www.youtube.com/embed/{{video}}" frameborder="0" width="300" height="300"></iframe>
+   </th>
+   <th>
+    <a href="/edit/{{_id}}" class="btn btn-warning">Edit</a>
+    <a href="/delete/{{_id}}" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
+   </th>
+  </tr>
+ {{/each}}
+ 
+</table>
